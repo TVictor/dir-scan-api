@@ -30,3 +30,10 @@ To see the container file system root : **http://localhost:8080/**
 If you mounted the host file system you should be able to see your own systems files listed: **http://localhost:8080/home/hostroot/**
 
 Because the API is hypermedia linked, you would browse file and folders as you would the directory structure in a linux terminal.
+
+## Setup behind reverse proxy or hosted url entry:
+To change the hypermedia uri entries for _self and _parent you will need to pass in an environment variable into the container on startup:
+
+**docker run --name dir-scan-api -e hosted_url=mydomain.co.za -p 8080:8080 -t tvictor/dir-scan-api**
+
+Links will then contain: http://mydomain.co.za:8080/
