@@ -1,0 +1,8 @@
+co/za/tvictor/dirscanrest/model/DirectoryList.class
+co/za/tvictor/dirscanrest/controller/DirectoryScanController.class
+co/za/tvictor/dirscanrest/service/DirectoryInfoService.class
+co/za/tvictor/dirscanrest/service/DirectoryInfoServiceInterface.class
+co/za/tvictor/dirscanrest/model/DirectoryItem.class
+co/za/tvictor/dirscanrest/Application.class
+co/za/tvictor/dirscanrest/controller/DirectoryScanController$ResourceNotFoundException.class
+co/za/tvictor/dirscanrest/model/FileAttributes.class
