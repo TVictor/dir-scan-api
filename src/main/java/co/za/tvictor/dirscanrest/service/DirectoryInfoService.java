@@ -3,6 +3,7 @@ package co.za.tvictor.dirscanrest.service;
 import java.io.File;
 import java.io.IOException;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Component;
 
@@ -10,6 +11,7 @@ import co.za.tvictor.dirscanrest.model.DirectoryItem;
 import co.za.tvictor.dirscanrest.model.DirectoryList;
 
 @Component
+@Slf4j
 public class DirectoryInfoService implements DirectoryInfoServiceInterface {
 
 	private String hostedUrl;
@@ -17,6 +19,7 @@ public class DirectoryInfoService implements DirectoryInfoServiceInterface {
 	@Override
 	public DirectoryList generateDirectoryModel(String urlPath) {
 
+		log.info("Retrieving directory listing at: " + urlPath);
 
 		//function to set the parent link.
 		String[] selfPieces = urlPath.split("/");
@@ -55,10 +58,9 @@ public class DirectoryInfoService implements DirectoryInfoServiceInterface {
 				// when the local filesystem is mounted in the docker container
 				// This will at least print that it tried
 				if (ownershipFail) {
-					System.out.println("mounted file ownership could not be retrieved: " + f.getName());
+					log.info("mounted file ownership could not be retrieved: " + f.getName());
 					ownershipFail = false;
 				}
-
 
 				DirectoryItem item = new DirectoryItem(f.getName(), f.getAbsolutePath(), f.isDirectory()
 						, FileUtils.byteCountToDisplaySize(f.length()), hostedUrl + f.getAbsolutePath(), owner, f.canRead(), f.canWrite());
