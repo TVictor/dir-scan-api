@@ -1,13 +1,13 @@
 package co.za.tvictor.dirscanrest.model;
 
 public class FileAttributes {
-	
+
 	private boolean canRead;
 	private boolean canWrite;
 	private String owner;
 	private boolean isDirectory;
 	private String fileSize;
-	
+
 	public FileAttributes() {
 		super();
 	}
@@ -36,8 +36,8 @@ public class FileAttributes {
 	public boolean isDirectory() {
 		return isDirectory;
 	}
-	
-	public String  getFileSize() {
+
+	public String getFileSize() {
 		return fileSize;
 	}
 
