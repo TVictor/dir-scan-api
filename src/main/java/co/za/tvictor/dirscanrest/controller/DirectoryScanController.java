@@ -44,7 +44,7 @@ public class DirectoryScanController {
 
 		} else {
 
-			directoryListService.setHostedUrl("http://" + hosted_Url + ":" + request.getServerPort());
+			directoryListService.setHostedUrl(hosted_Url);
 
 		}
 
