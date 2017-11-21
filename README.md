@@ -1,6 +1,6 @@
 # Directory Scan API
 
-![](https://travis-ci.org/victeck/dir-scan-api.svg?branch=master)
+[![Build Status](https://travis-ci.org/victeck/dir-scan-api.svg?branch=master)](https://travis-ci.org/victeck/dir-scan-api)
 
 This REST API exposes a service that lists files and directories on the local file system in a hateoas format
 
